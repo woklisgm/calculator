@@ -1,0 +1,41 @@
+.display {
+	height: 26%;
+	display: flex;
+	flex-shrink: 0;
+	color: #F2F2F2;
+	user-select: none;
+	align-items: flex-end;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.expression {
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: 500;
+}
+
+.expression span {
+	border-right: 2px solid rgba(0, 0, 0, 0.2);
+	animation: cursor-blink infinite;
+	animation-duration: 1.5s;
+	animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
+
+}
+
+.result {
+	font-weight: 700;
+	font-size: 56px;
+	line-height: 80px;
+}
+
+@keyframes cursor-blink {
+	from {
+		border-right: 2px solid rgba(255, 255, 255, 0.3);
+	}
+
+	to {
+		border-right: 2px solid rgba(255, 255, 255, 0);
+	}
+}

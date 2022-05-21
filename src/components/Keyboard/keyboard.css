@@ -1,0 +1,47 @@
+.keyboard {
+	user-select: none;
+	height: 100%;
+	display: grid;
+	row-gap: 16px;
+	column-gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+}
+
+.btn {
+	cursor: pointer;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	color: #f2f2f2;
+	font-size: 36px;
+	font-weight: 500;
+}
+
+.btn:after {
+	content: "";
+	opacity: 0;
+	height: 100%;
+	position: absolute;
+	border-radius: 50%;
+	aspect-ratio: 1 / 1;
+	display: inline-block;
+	background-color: rgba(242, 242, 242, 0.12);
+	transition: opacity 0.2s ease-in;
+}
+
+.btn:hover:after {
+	opacity: 1;
+}
+
+.btn:last-child div {
+	z-index: 1;
+	color: #2B589A;
+}
+
+.btn:last-child:after {
+	z-index: 0;
+	opacity: 1;
+	background-color: #fff;
+}

@@ -1,0 +1,18 @@
+.app {
+	background: linear-gradient(to right,#FFA1A1, #FF7B7B);
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrapper {
+	padding: 38px 31px;
+	width: 35vw;
+	height: 92vh;
+	border-radius: 18px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+
