@@ -27,29 +27,13 @@ module.exports = {
 	},
 	module: {
 		rules: [
-     		// {
-			// 	test: /\.jsx?$/,
-			// 	loader: "babel-loader",
-			// 	exclude: "/node_modules/"
-			// },
 			{
 				test: /\.[tj]sx?$/,
 				use: ['ts-loader'],
 				exclude: "/node_modules/"
 			},
-			// {
-       		// 	test: /\.(eot|svg|ttf|woff|woff2)$/,
-       		// 	use: [
-			// 		   {
-			// 			   loader: 'url-loader',
-			// 			   options: {
-			// 				   limit: 8192
-			// 			   }
-			// 			}
-			// 		]
-     		// },
 			{
-       			test: /\.(eot|svg|ttf|woff|woff2)$/,
+				test: /\.(eot|svg|ttf|woff|woff2)$/,
 				type: 'asset/resource',
 				generator: {
 					filename: 'fonts/[name][ext]'

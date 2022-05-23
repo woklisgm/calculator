@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display test snapshot 1`] = `
+<div
+  className="display"
+  data-testid="display"
+>
+  <div
+    className="expression"
+  >
+    <span
+      className=""
+      data-testid="expression"
+    >
+      <i />
+    </span>
+  </div>
+  <div
+    className="result"
+    data-testid="result"
+  >
+    0
+  </div>
+</div>
+`;
