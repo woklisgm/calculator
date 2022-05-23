@@ -16,7 +16,7 @@ function Display() {
 		setTimeout(() => {
 			setChatter(false);
 		}, 250)
-	}, [counter, error])
+	}, [counter, error]);
 
 	const expressionClass = classNames({
 		[styles.error]: error,

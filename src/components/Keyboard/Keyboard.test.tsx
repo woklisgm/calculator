@@ -36,5 +36,5 @@ describe('Keyboard tests', () => {
 		const btns = screen.getAllByTestId('keyboard-btn');
 		
 		expect(btns.length).toBe(keyboard.length);
-	}) 
-})
+	});
+});

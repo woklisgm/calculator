@@ -2,6 +2,7 @@ import {
 	SetError,
 	SetResult,
 	ClearError,
+	PastExpression,
 	CalculatorState,
 	ClearExpression,
 	AddToExpression,
@@ -32,6 +33,11 @@ export const CalcActionCreators = {
 		payload
 	}),
 
+	pastExpression: (payload: string): PastExpression => ({
+		type: CalculatorActionsNum.PASTE_EXPRESSION,
+		payload
+	}),
+
 	removeLastSymbol: (): RemoveLastSymbol => ({
 		type: CalculatorActionsNum.REMOVE_LAST_SYMBOL,
 	}),
@@ -44,18 +50,16 @@ export const CalcActionCreators = {
 	calculateExpression: (st: string) => {
 		try {
 			const result = calculate(st);
-
 			return {
 				type: CalculatorActionsNum.CALCULATE_EXPRESSION,
 				payload: result,
-			};
+			}
 		} catch (e) {
 			const err = e as ParseError;
-
 			return {
 				type: CalculatorActionsNum.SET_ERROR,
 				payload: err.message,
-			};
+			}
 		}
 	},
 
@@ -71,6 +75,9 @@ export const CalcActionCreators = {
 				case '*': 
 					dispatch(CalcActionCreators.addToExpression('×'));
 					break;
+				case '.': 
+					dispatch(CalcActionCreators.addToExpression(','));
+					break;
 				case '=':
 				case 'Enter':
 					dispatch(CalcActionCreators.calculateExpression(exp));
@@ -83,4 +90,4 @@ export const CalcActionCreators = {
 					dispatch(CalcActionCreators.clearExpression());
 			}
 		}
-};
+}

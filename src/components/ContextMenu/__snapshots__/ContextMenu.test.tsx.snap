@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keyboard tests snapshot 1`] = `
+<div
+  className="contextmenu"
+  style={
+    Object {
+      "left": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    className="item"
+    data-testid="past"
+    onClick={[Function]}
+  >
+    Вставить
+  </div>
+  <div
+    className="item"
+    data-testid="clear"
+    onClick={[Function]}
+  >
+    Очистить
+  </div>
+  <div
+    className="item"
+  >
+    ...
+  </div>
+</div>
+`;

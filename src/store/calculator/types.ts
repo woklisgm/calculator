@@ -9,10 +9,16 @@ export enum CalculatorActionsNum {
 	SET_ERROR = 'SET_ERROR',
 	CLEAR_ERROR = 'CLEAR_ERROR',
 	SET_RESULT = 'SET_RESULT',
+	PASTE_EXPRESSION = 'PASTE_EXPRESION',
 	CLEAR_EXPRESSION = 'CLEAR_EXPRESSION',
 	ADD_TO_EXPRESSION = 'ADD_TO_EXPRESSION',
 	REMOVE_LAST_SYMBOL = 'REMOVE_LAST_SYMBOL',
 	CALCULATE_EXPRESSION = 'CALCULATE_EXPRESSION',
+}
+
+export interface PastExpression {
+	type: CalculatorActionsNum.PASTE_EXPRESSION;
+	payload: string;
 }
 
 export interface SetError {
@@ -52,6 +58,7 @@ export interface CalculateExpression {
 export type CalculatorAction = SetError
 	| ClearError
 	| SetResult
+	| PastExpression
 	| AddToExpression 
 	| ClearExpression
 	| RemoveLastSymbol

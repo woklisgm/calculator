@@ -22,6 +22,10 @@ function calclulatorReducer(state = initialState, {type, payload}: CalculatorAct
 			...state,
 			expression: `${state.expression}${payload}`
 		}
+		case CalculatorActionsNum.PASTE_EXPRESSION: return {
+			...state,
+			expression: payload
+		}
 		case CalculatorActionsNum.CLEAR_EXPRESSION: return {
 			error: '',
 			result: 0,

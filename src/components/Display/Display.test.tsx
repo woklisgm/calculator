@@ -63,14 +63,3 @@ describe('Display test', () => {
 		expect(screen.getByTestId('result')).toContainHTML('0');
 	});
 })
-
-// var mockTypedSelector = () => ({result: 0, expression: ''});
-
-// jest.mock('../../hooks/useTypedSelector', () => ({
-// 	useTypedSelector: jest.fn()
-// 	// useTypedSelector: () => ({result: 1, expression: ''})
-// 	// useTypedSelector: jest.fn()
-// 	// return jest.fn().mockImplementation(() => {
-// 	// 	return mockTypedSelector;
-// 	// })
-// }));
