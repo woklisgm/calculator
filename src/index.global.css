@@ -1,3 +1,13 @@
+@import url('./fonts/Geometria/stylesheet.css');
+
+:root {
+	--start-bg-gradient: #FFA1A1;
+	--end-bg-gradient: #FFA1A1;
+	--start-calc-bg-gradient: #28518E;
+	--end-calc-bg-gradient: #3A77D1;
+	--wrapper-bg-color: rgba(255, 255, 255, 0.2);
+}
+
 * {
 	margin: 0;
 	box-sizing: border-box;

@@ -8,20 +8,21 @@
 	flex-direction: column;
 	justify-content: flex-end;
 	border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+	overflow: hidden;
 }
 
 .expression {
 	font-size: 24px;
 	line-height: 32px;
 	font-weight: 500;
+
 }
 
-.expression span {
+.expression span i {
 	border-right: 2px solid rgba(0, 0, 0, 0.2);
 	animation: cursor-blink infinite;
 	animation-duration: 1.5s;
 	animation-timing-function: cubic-bezier(1.0, 0, 0, 1.0);
-
 }
 
 .result {
@@ -37,5 +38,46 @@
 
 	to {
 		border-right: 2px solid rgba(255, 255, 255, 0);
+	}
+}
+
+.error {
+	color: #ff8585;
+}
+
+button {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.chatter {
+	display: inline-block;
+	position: relative;
+	animation: expression-chatter 0.2s;
+	animation-iteration-count: 1;
+}
+
+@keyframes cexpreolor {
+	from {
+		color: #fff
+	}
+
+	to {
+		color: #000
+	}
+}
+
+@keyframes expression-chatter {
+	from {
+		transform: translateX(0px);
+	}
+
+	50% {
+		transform: translateX(-4px);
+	}
+
+	to {
+		transform: translateX(0px);
 	}
 }

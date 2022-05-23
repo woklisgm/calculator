@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
@@ -19,14 +20,14 @@ module.exports = {
 	entry: path.resolve(__dirname, 'src/index.tsx'),
 	output: {
 		path: path.resolve(__dirname, 'public'),
-		filename: 'index.js'
+		filename: 'bundle.js'
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
 	},
 	module: {
 		rules: [
-      // {
+     		// {
 			// 	test: /\.jsx?$/,
 			// 	loader: "babel-loader",
 			// 	exclude: "/node_modules/"
@@ -34,8 +35,26 @@ module.exports = {
 			{
 				test: /\.[tj]sx?$/,
 				use: ['ts-loader'],
-        exclude: '/node_modules/'
+				exclude: "/node_modules/"
 			},
+			// {
+       		// 	test: /\.(eot|svg|ttf|woff|woff2)$/,
+       		// 	use: [
+			// 		   {
+			// 			   loader: 'url-loader',
+			// 			   options: {
+			// 				   limit: 8192
+			// 			   }
+			// 			}
+			// 		]
+     		// },
+			{
+       			test: /\.(eot|svg|ttf|woff|woff2)$/,
+				type: 'asset/resource',
+				generator: {
+					filename: 'fonts/[name][ext]'
+				}
+     		},
 			{
 				test: /\.css?/,
 				use: [
@@ -59,7 +78,15 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HTMLWebpackPlugin({ template: path.resolve(__dirname, 'public/index.html') })
+		new HTMLWebpackPlugin({ template: path.resolve(__dirname, 'public/index.html')}),
+		// new CopyWebpackPlugin({
+		// 	patterns: [
+		// 		{ 
+		// 			from: path.resolve(__dirname, 'src/assets/fonts/Geometria/'), 
+		// 			to:  path.resolve(__dirname, 'public/assets/fonts'),
+		// 		}
+		// 	]
+		// })
 	],
 	devServer: {
 		port: 3000,
