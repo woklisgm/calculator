@@ -136,10 +136,6 @@ class Calc {
 			this.n += 1;
 		} while(this.n < st.length && isDigit(st, this.n));
 
-		console.log('-------');
-		console.log('charAt', st.charAt(this.n));
-	
-
 		if (this.n < st.length && st.charAt(this.n) == ","){
 			this.n += 1;
 			while(this.n < st.length && isDigit(st, this.n))

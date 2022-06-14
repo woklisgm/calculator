@@ -65,6 +65,9 @@ export const CalcActionCreators = {
 
 	checkKey: (key: string) =>
 		async (dispatch: AppDispatch,  getState: () => CalculatorState) => {
+			console.log(key);
+			
+
 			if (validCharacters.includes(key)) {
 				dispatch(CalcActionCreators.addToExpression(key));
 			}
@@ -78,8 +81,8 @@ export const CalcActionCreators = {
 				case ',': 
 					// dispatch(CalcActionCreators.addToExpression(','));
 					break;
-				case '=':
 				case 'Enter':
+				case '=':
 					dispatch(CalcActionCreators.calculateExpression(exp));
 					break;
 				case 'Backspace':
@@ -88,6 +91,7 @@ export const CalcActionCreators = {
 				case 'C':
 				case 'Escape':
 					dispatch(CalcActionCreators.clearExpression());
+					break;
 			}
 		}
 }
