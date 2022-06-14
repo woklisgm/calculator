@@ -23,7 +23,7 @@ class Calc {
 		// console.log(this.calc(exp))
 		// console.log(this.err);
 
-		return this.calc(exp);
+		return this.calc(exp).toFixed(2);
 	}
 
 	calc = (exp: any): any => {
@@ -129,19 +129,24 @@ class Calc {
 	}
 
 	parseNumber = (st: string, n: number): number => {
+		
 		let start = n;
 
 		do {
 			this.n += 1;
-		} while(this.n < st.length && isDigit(st, this.n))
+		} while(this.n < st.length && isDigit(st, this.n));
 
-		if (this.n < st.length && st.charAt(n) === "."){
+		console.log('-------');
+		console.log('charAt', st.charAt(this.n));
+	
+
+		if (this.n < st.length && st.charAt(this.n) == ","){
 			this.n += 1;
 			while(this.n < st.length && isDigit(st, this.n))
-				this.n++;
+				this.n += 1;
 		}
 
-		return parseFloat(st.substring(start, this.n))
+		return parseFloat(st.substring(start, this.n).replace(',', '.'));
 	}
 }
 

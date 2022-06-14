@@ -19,16 +19,16 @@ function Keyboard() {
 	return (
 		<div className={styles.keyboard} onClick={handleClick} data-testid="keyboard">
 			{keyboard.map((char, i) => 
-				<div 
+				<button 
 				 	key={char}
 					className={styles.btn}
 					data-testid="keyboard-btn"
 					data-char={char}
 				>
-					<div>
+					<span>
 						{char}
-					</div>
-				</div>
+					</span>
+				</button>
 			)}
 		</div>
 	);

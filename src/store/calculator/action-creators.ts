@@ -75,8 +75,8 @@ export const CalcActionCreators = {
 				case '*': 
 					dispatch(CalcActionCreators.addToExpression('×'));
 					break;
-				case '.': 
-					dispatch(CalcActionCreators.addToExpression(','));
+				case ',': 
+					// dispatch(CalcActionCreators.addToExpression(','));
 					break;
 				case '=':
 				case 'Enter':

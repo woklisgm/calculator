@@ -1,3 +1,9 @@
+button {
+	background: none;
+	outline: none;
+	border: none;
+}
+
 .keyboard {
 	user-select: none;
 	height: 100%;
@@ -35,7 +41,7 @@
 	opacity: 1;
 }
 
-.btn:last-child div {
+.btn:last-child span {
 	z-index: 1;
 	color: #2B589A;
 }
